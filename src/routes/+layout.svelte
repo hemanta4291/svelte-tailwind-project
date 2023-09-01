@@ -13,5 +13,7 @@
 </div>
 
 <style>
-	
+	main{
+		padding: 16px;
+	}
 </style>

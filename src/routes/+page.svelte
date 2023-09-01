@@ -11,143 +11,64 @@
 
 <section>
 	
-	<div class="layout-container">
-		<div class="layout-one common">1</div>
-		<div class="layout-two common">2</div>
-		<div class="layout-three common">3</div>
-		<div class="layout-four common">4</div>
-		<div class="layout-five common">5</div>
-		<div class="layout-six common">6</div>
-		<div class="layout-seven common">7</div>
+	<div class="layout-container h-[calc(100vh-48px)] grid grid-cols-12 grid-rows-6">
+		<div class="layout-one col-[1/3] row-[1/4] bg-blue-400">1</div>
+		<div class="layout-two col-[3/7] row-[1/6] bg-rose-100">2</div>
+		<div class="layout-three col-[7/-1] row-[1/3] bg-blue-400">3</div>
+		<div class="layout-four col-[1/3] row-[4/6] bg-teal-400">4</div>
+		<div class="layout-five col-[7/11] row-[3/7] bg-yellow-100 grid justify-center items-center">
+			<div class="mountain-container">
+				<div class="mountain-inner bg-yellow-100">
+					<div class="mountain-sticker"></div>
+				</div>
+			</div>
+		</div>
+		<div class="layout-six col-[11/-1] row-[3/7] bg-emerald-400">6</div>
+		<div class="layout-seven col-[1/7] row-[6/-1] bg-fuchsia-400">7</div>
 	</div>
 
-
-	<div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-		<div class="shrink-0">
-		  <!-- <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo"> -->
-		  ok
-		</div>
-		<div>
-		  <div class="text-xl font-medium text-black">ChitChat</div>
-		  <p class="text-slate-500">You have a new message!</p>
-		</div>
-	  </div>
 </section>
 
 <style>
-	/* .layout-container{
-		display: grid;
-		grid-template-columns: repeat(12,1fr);
-		grid-template-rows: repeat(6,1fr);
+	.mountain-container{
+		width: 400px;
+		height: 100%;
+		max-height: 400px;
+		background: #000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.mountain-container .mountain-inner{
 		width: 100%;
-		height: 400px;
-		grid-gap: 8px;
-		grid-template-areas: 
-			"l1 l1 l2 l2 l2 l2 l3 l3 l3 l3 l3 l3"
-			"l1 l1 l2 l2 l2 l2 l3 l3 l3 l3 l3 l3"
-			"l1 l1 l2 l2 l2 l2 l5 l5 l5 l5 l6 l6"
-			"l4 l4 l2 l2 l2 l2 l5 l5 l5 l5 l6 l6"
-			"l4 l4 l2 l2 l2 l2 l5 l5 l5 l5 l6 l6"
-			"l7 l7 l7 l7 l7 l7 l5 l5 l5 l5 l6 l6"
-		;
-	
-	}
-	.common{
-		background-color: black;
-		color: white;;
-	}
-	.layout-one{
-		background-color: red;
-		grid-area: l1;
-	}
-	.layout-two{
-		grid-area: l2;
-	}
-	.layout-three{
-		grid-area: l3;
-	}
-	.layout-four{
-		grid-area: l4;
-	}
-	.layout-five{
-		grid-area: l5;
+		max-width: 300px;
+		height: 100%;
+		max-height: 300px;
+		border-radius: 50%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		position: relative;
+
 	}
 
-	.layout-six{
-		grid-area: l6;
-	}
-	.layout-seven{
-		grid-area: l7;
-	} */
+	.mountain-container .mountain-sticker {
+		width: 150px;
+      height: 100px;
+      transform: skew(20deg);
+      background: red;
+    }
+    .mountain-container .mountain-sticker:after {
+		/* content: '';
+      position: absolute;
+      left: -50px;
+      top: 70px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top: 70px solid red; */
 
-
-
-	.layout-container{
-		display: grid;
-		grid-template-columns: repeat(12,1fr);
-		grid-template-rows: repeat(6,1fr);
-		grid-gap: 8px;
-		height: 500px;
-		border: 1px solid #f00;
-	}
-
-
-	.common{
-		background-color: black;
-		color: white;
-	}
-	/* .layout-one{
-		grid-column: 1 / 3;
-		grid-row: 1 / 4;
-		
-	}
-	.layout-two{
-		grid-column: 3 / 7;
-		grid-row: 1 / 6;
-	}
-	.layout-three{
-		grid-column: 7 / -1;
-		grid-row: 1 / 3;
-	}
-	.layout-four{
-		grid-column: 1 / 3;
-		grid-row: 3 / -1;
-	}
-
-	.layout-five{
-		grid-column: 7 / 11;
-		grid-row: 3 / 7;
-	}
-
-	.layout-six{
-		grid-column: 11 / -1;
-		grid-row: 3 / 7;
-	}
-
-	.layout-seven{
-		grid-column: 3 / 11;
-		grid-row: 6 / -1;
-	} */
-	
-
-	@media only screen and (max-width: 768px) {
-		.layout-container{
-			/* grid-template-columns: repeat(4,1fr);
-			grid-template-areas: 
-			"l1 l1 l1 l1 l1 l1 l1 l1 l1 l1 l1 l1"
-			"l2 l2 l2 l2 l2 l2 l2 l2 l2 l2 l2 l2"
-			"l3 l3 l3 l3 l3 l3 l3 l3 l3 l3 l3 l3"
-			"l4 l4 l4 l4 l4 l4 l4 l4 l4 l4 l4 l4"
-			"l5 l5 l5 l5 l5 l5 l5 l5 l5 l5 l5 l5"
-			"l6 l6 l6 l6 l6 l6 l6 l6 l6 l6 l6 l6"
-		;
-		} */
-
-		grid-template-columns: repeat(4,1fr);
-
-
-		}
-		
-	}
+    }
 
 </style>
