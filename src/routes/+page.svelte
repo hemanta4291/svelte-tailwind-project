@@ -1,7 +1,5 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	
 </script>
 
 <svelte:head>
@@ -10,21 +8,21 @@
 </svelte:head>
 
 <section>
-	
-	<div class="layout-container h-[calc(100vh-48px)] grid grid-cols-12 grid-rows-6">
-		<div class="layout-one col-[1/3] row-[1/4] bg-blue-400">1</div>
-		<div class="layout-two col-[3/7] row-[1/6] bg-rose-100">2</div>
-		<div class="layout-three col-[7/-1] row-[1/3] bg-blue-400">3</div>
-		<div class="layout-four col-[1/3] row-[4/6] bg-teal-400">4</div>
-		<div class="layout-five col-[7/11] row-[3/7] bg-yellow-100 grid justify-center items-center">
+	<!-- h-[calc(100vh-48px)] -->
+	<div class="layout-container h-[1024px] sm:h-[780px] grid grid-cols-12 grid-rows-6">
+		<div class="layout-one col-[1/-1] sm:col-[1/3] sm:row-[1/4] bg-blue-400"></div>
+		<div class="layout-two col-[1/-1] sm:col-[3/7] sm:row-[1/6] bg-rose-100"></div>
+		<div class="layout-three col-[1/-1] sm:col-[7/-1] sm:row-[1/3] bg-blue-400"></div>
+		<div class="layout-four col-[1/-1] sm:col-[1/3] sm:row-[4/6] bg-teal-400"></div>
+		<div class="layout-five col-[1/-1] sm:col-[7/11] sm:row-[3/7] bg-yellow-100 grid justify-center items-center">
 			<div class="mountain-container">
 				<div class="mountain-inner bg-yellow-100">
 					<div class="mountain-sticker"></div>
 				</div>
 			</div>
 		</div>
-		<div class="layout-six col-[11/-1] row-[3/7] bg-emerald-400">6</div>
-		<div class="layout-seven col-[1/7] row-[6/-1] bg-fuchsia-400">7</div>
+		<div class="layout-six col-[1/-1] sm:col-[11/-1] sm:row-[3/7] bg-emerald-400"></div>
+		<div class="layout-seven col-[1/-1] sm:col-[1/7] sm:row-[6/-1] bg-fuchsia-400"></div>
 	</div>
 
 </section>
@@ -34,13 +32,13 @@
 		width: 400px;
 		height: 100%;
 		max-height: 400px;
-		background: #000;
+		background: #293462;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	.mountain-container .mountain-inner{
+	.mountain-inner{
 		width: 100%;
 		max-width: 300px;
 		height: 100%;
@@ -50,25 +48,62 @@
 		align-items: flex-end;
 		justify-content: center;
 		position: relative;
+		overflow: hidden;
 
 	}
 
-	.mountain-container .mountain-sticker {
-		width: 150px;
-      height: 100px;
-      transform: skew(20deg);
-      background: red;
+	.mountain-sticker {
+		width: 0px;
+		height: 0;
+		border-left: 299px solid transparent;
+		border-right: 141px solid transparent;
+		border-bottom: 190px solid red;
+		position: relative;
+		margin-bottom: -1px;
+		transform: rotate(-11deg);
     }
-    .mountain-container .mountain-sticker:after {
-		/* content: '';
-      position: absolute;
-      left: -50px;
-      top: 70px;
-      width: 0;
-      height: 0;
-      border: 50px solid transparent;
-      border-top: 70px solid red; */
+    .mountain-sticker:after {	
+		position: absolute;
+		content: '';
+		bottom: -129px;
+		width: 50px;
+		height: 50px;
+		left: -215px;
+		background: red;
+		transform: rotate(57deg)
+    }
 
-    }
+
+	@media screen and (min-width:768px)and (max-width: 1366px)  {
+		.mountain-container{
+			width: 300px;
+			height: 300px;
+		}
+		.mountain-inner{
+			max-width: 250px;
+			max-height: 250px;
+		}
+	}
+	@media screen and (min-width:320px)and (max-width: 1023px)  {
+		.mountain-container{
+			width: 200px;
+			height: 200px;
+		}
+		.mountain-inner{
+			max-width: 150px;
+			max-height: 150px;
+		}
+		.mountain-sticker{
+			border-left: 139px solid transparent;
+			border-right: 49px solid transparent;
+			border-bottom: 81px solid red;
+
+		}
+		.mountain-sticker:after{
+			bottom: -81px;
+			left:-124px;
+
+		}
+	}
 
 </style>
